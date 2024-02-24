@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../utils/constants/app-color.dart';
 import '../../../utils/constants/app-image.dart';
 import '../../../utils/constants/app-string.dart';
-import '../../controller/splash-controller.dart';
+import '../../controller/splash/splash-controller.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

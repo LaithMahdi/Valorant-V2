@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:fortnite/src/utils/constants/app-color.dart';
 import 'package:get/get.dart';
 import 'src/get-pages.dart';
+import 'src/utils/bindings/initial-binding.dart';
+import 'src/utils/constants/app-size.dart';
 import 'src/utils/constants/app-string.dart';
+import 'src/utils/constants/app-theme.dart';
+import 'src/utils/service/my-services.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
 }
 
@@ -14,30 +19,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    AppSize().init(context);
     return GetMaterialApp(
       title: AppString.appName,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Valorant",
-        primaryColor: AppColor.primary,
-        useMaterial3: true,
-        scaffoldBackgroundColor: AppColor.light,
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-          bodyMedium: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
-          bodySmall: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ),
+      theme: ThemeService().darkTheme,
       getPages: getPages,
+      initialBinding: InitialBindings(),
     );
   }
 }
