@@ -10,7 +10,7 @@ import '../../../utils/functions/handling-data.dart';
 class AgentController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late TabController _tabController;
-  String? _name = "";
+  late String _name = "";
   final int _initialIndex = 1;
   StatusRequest _statusRequest = StatusRequest.loading;
   final AgentData _agentData = AgentData(Get.find());
@@ -28,7 +28,7 @@ class AgentController extends GetxController
     _tabController = TabController(
         length: roleItems.length, vsync: this, initialIndex: _initialIndex);
     _tabController.addListener(_onTabChanged);
-    _name = Get.arguments?["name"];
+    _name = Get.arguments["name"];
     getAgents();
     super.onInit();
   }
@@ -78,7 +78,6 @@ class AgentController extends GetxController
   @override
   void onClose() {
     _tabController.removeListener(_onTabChanged);
-    // _name = null;
     super.onClose();
   }
 

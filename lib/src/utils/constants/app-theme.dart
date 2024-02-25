@@ -7,12 +7,15 @@ class ThemeService extends GetxController {
     fontFamily: "Valorant",
     primaryColor: AppColor.primary,
     scaffoldBackgroundColor: AppColor.dark,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: AppColor.dark,
       centerTitle: true,
       scrolledUnderElevation: 0,
       elevation: 0,
-      titleTextStyle: Get.textTheme.headlineLarge!.copyWith(
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: AppColor.light,
         fontFamily: "Valorant",
       ),
     ),

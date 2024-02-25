@@ -9,4 +9,6 @@ class AppImage {
   static const weapon = "$baseRoot/36feef96777033.5eb5caed75c90.png";
   static const season =
       "$baseRoot/valorant-seasons-2023-start-end-dates-act-episodes.webp";
+
+  static const season_01 = "$baseRoot/Yoru_1920x1080-1.webp";
 }
