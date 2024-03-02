@@ -4,4 +4,7 @@ class Api {
 
   static const String agents = "$baseUrl/agents";
   static const String seasons = "$baseUrl/seasons/competitive";
+  static const String maps = "$baseUrl/maps";
+  static const String weapons = "$baseUrl/weapons";
+  static const String bundles = "$baseUrl/bundles";
 }
