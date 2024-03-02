@@ -24,8 +24,7 @@ class WeaponScreen extends StatelessWidget {
               WeaponModel weapon = controller.weapons[index];
               return WeaponCard(
                 weapon: weapon,
-                onTap: () {},
-                tag: weapon.displayIcon!,
+                onTap: () => controller.goToSeasonDetail(weapon),
               );
             },
             separatorBuilder: (context, index) => const VerticalSpacer(2),

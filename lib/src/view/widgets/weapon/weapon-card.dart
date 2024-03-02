@@ -8,19 +8,19 @@ import '../../../utils/constants/app-size.dart';
 class WeaponCard extends StatelessWidget {
   final WeaponModel weapon;
   final VoidCallback onTap;
-  final String tag;
-  const WeaponCard(
-      {super.key,
-      required this.weapon,
-      required this.onTap,
-      required this.tag});
+  // final String tag;
+  const WeaponCard({
+    super.key,
+    required this.weapon,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Hero(
-        tag: tag,
+        tag: weapon.displayIcon!,
         child: Container(
           height: AppSize.screenHeight! * .2,
           width: AppSize.screenWidth,
